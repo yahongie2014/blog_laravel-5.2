@@ -30,6 +30,11 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
         ],
+		 'admin' => [
+             \App\Http\Middleware\Authenticate::class,
+            \App\Http\Middleware\IsUserAdmin::class,
+
+        ],
 
         'api' => [
             'throttle:60,1',

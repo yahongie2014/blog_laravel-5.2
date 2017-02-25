@@ -52,6 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'Phone' => 'required|min:12',
         ]);
     }
 
@@ -66,6 +67,7 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'Phone' => $data['Phone'],
             'password' => bcrypt($data['password']),
         ]);
     }

@@ -1,5 +1,8 @@
 <?php
-
+/*
+Ahmed Saeed Ahmed 
+Senior PHP Developer
+*/
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
@@ -150,5 +153,15 @@ class HomeController extends Controller
 
     }
 
+    public function post_up(Request $r)
+    {
+        $p_id = $r->input('post');
+        $u_id = $r->input('user');
+        $post_l = new Like;
+        $post_l->post_id=$p_id;
+        $post_l->user_id=$u_id;
+        $post_l->up = 1;
+        $post_l->save();
+    }
 
 }

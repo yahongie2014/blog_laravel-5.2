@@ -1,5 +1,8 @@
 <?php
-
+/*
+Ahmed Saeed Ahmed 
+Senior PHP Developer
+*/
 namespace App\Http\Controllers;
 
 use App\Comment;
@@ -52,30 +55,5 @@ class Admin extends Controller
         }
 
     }
-
-    //create comment for all user with post id
-    /*public function Create_comment (Request $request,Post $posts){
-
-        $rules=[
-            'content'=>'required'
-        ];
-        $val = Validator::make($request->all(),$rules);
-        if($val->fails())
-        {
-            return redirect()->back()->withInput()->withErrors($val);
-        }else {
-                $post_id = $posts->id;
-                $comment = new Comment();
-                $comment->id = input::get('id');
-                $comment->user_id = Auth::user()->id;
-                $comment->content = input::get('content');
-                $comment->post_id = $post_id;
-                $comment->save();
-
-            return Redirect("/Showarticle/?Success=$comment->id")
-                ->with('Success', 'You have been successfully Add New One ');
-        }
-
-    }*/
 
 }

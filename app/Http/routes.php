@@ -56,11 +56,25 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/post/comment/edit/{id}', array('as' => 'comment_edit', 'uses' => 'HomeController@edit_comment'));
     Route::post('/post/comment/update', array('as' => 'comment_update', 'uses' => 'HomeController@update_comment'));
     Route::post('/post/comment/publish', array('as' => 'comment_publish', 'uses' => 'HomeController@Create_comment'));
-    Route::get('/Vote/Up/{id}/{user}/{location}', array('as' => 'vote_up', 'uses' => 'HomeController@up'));
-    Route::get('/Vote/Down/{id}/{user}/{location}', array('as' => 'vote_down', 'uses' => 'HomeController@down'));
+    Route::post('/post/post_vote_up', array('as' => 'vote_up', 'uses' => 'HomeController@post_up'));
+    Route::post('/post/post_vote_down', array('as' => 'vote_up', 'uses' => 'HomeController@post_down'));
+
+
+    Route::get('/chat', '\App\Http\Controllers\Chat\ChatController@getChat');
+
+    Route::get('/messages', '\App\Http\Controllers\Chat\ChatController@listMessages');
+
+    Route::post('/messages', '\App\Http\Controllers\Chat\ChatController@saveMessage');
 
 
 
+});
+
+Route::group(array('prefix' => '/api'), function()
+{
+Route::post('/Api/Register','API@Register');
+
+Route::post('/Api/Login','API@Login');
 
 });
 
