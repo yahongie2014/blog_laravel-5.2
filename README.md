@@ -8,10 +8,10 @@ clone your project by git https://github.com/yahongie2014/blog_laravel-5.2.git o
 use ssh git@github.com:yahongie2014/blog_laravel-5.2.git
 
 open cmd type following command:
--php artisan Key:generate
--php artisan migrate
--php artisan make:seeder
--php artisan serve
+#php artisan Key:generate
+#php artisan migrate
+#php artisan make:seeder
+#php artisan serve
 
 then open browser and type "localhost:8000"
 
